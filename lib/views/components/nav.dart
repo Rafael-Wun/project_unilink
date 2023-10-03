@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unilink/views/components/post_timeline.dart';
+import 'package:unilink/views/personalchat.dart';
 import 'package:unilink/views/profile.dart';
 
 class Navbar extends StatefulWidget {
@@ -29,12 +30,7 @@ class _NavbarState extends State<Navbar> {
       ),
     ),
     const Center(
-      child: Text(
-        'Chat',
-        style: TextStyle(
-          fontSize: 40,
-        ),
-      ),
+      child: PersonalChat(),
     ),
     const Center(
       child: ProfilePage(),
