@@ -17,7 +17,8 @@ class _NavbarState extends State<Navbar> {
   }
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
+    return Scaffold(
+        bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         // showSelectedLabels: false,
         // showUnselectedLabels: false,
@@ -43,6 +44,7 @@ class _NavbarState extends State<Navbar> {
               label: 'Profile'
           ),
         ],
+        ),
     );
   }
 }
