@@ -8,7 +8,22 @@ class ProfilePage extends StatefulWidget {
   State<ProfilePage> createState() => _ProfilePageState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfilePageState extends State<ProfilePage>
+    with SingleTickerProviderStateMixin {
+  late TabController tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    tabController = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,15 +32,15 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       body: ListView(
         children: <Widget>[
-          buildHeader(),
-          SizedBox(height: deviceHeight * .3),
-          buildBody(),
+          buildProfileHeader(),
+          SizedBox(height: deviceHeight * .1),
+          buildProfileBody(),
         ],
       ),
     );
   }
 
-  Widget buildHeader() {
+  Widget buildProfileHeader() {
     return Stack(
       clipBehavior: Clip.none,
       alignment: Alignment.center,
@@ -33,7 +48,7 @@ class _ProfilePageState extends State<ProfilePage> {
         buildCoverImage(),
         Positioned(
           top: deviceHeight * .125,
-          child: buildProfile(),
+          child: buildAvatar(),
         ),
       ],
     );
@@ -49,7 +64,7 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       );
 
-  Widget buildProfile() {
+  Widget buildAvatar() {
     return Column(
       children: [
         CircleAvatar(
@@ -59,6 +74,14 @@ class _ProfilePageState extends State<ProfilePage> {
         SizedBox(
           height: 16,
         ),
+      ],
+    );
+  }
+
+  Widget buildProfileBody() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
         Text(
           'Matthew Rene',
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -84,39 +107,38 @@ class _ProfilePageState extends State<ProfilePage> {
         SizedBox(
           height: 32,
         ),
-        Row(
-          children: [
-            Text('999 Followers'),
-            SizedBox(
-              width: 16,
-            ),
-            Text(
-              '|',
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 24,
-              ),
-            ),
-            SizedBox(
-              width: 16,
-            ),
-            Text('999 Following'),
-          ],
-        ),
+        buildFollow(),
       ],
     );
   }
 
-  Widget buildBody() {
+  void dummy() {
+    return;
+  }
+
+  Widget buildFollow() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        TextButton(
+            onPressed: dummy,
+            child: Text(
+              '999 Followers',
+              style: TextStyle(color: Colors.black),
+            )),
+        TextButton(
+            onPressed: dummy,
+            child: Text(
+              '999 Following',
+              style: TextStyle(color: Colors.black),
+            )),
+      ],
+    );
+  }
+
+  Widget buildPosts() {
     return Container(
-      margin: EdgeInsets.only(left: 8.0, right: 8.0),
-      padding: EdgeInsets.all(16.0),
-      width: deviceWidth,
-      height: deviceHeight,
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-        borderRadius: BorderRadius.circular(24.0),
-      ),
+      
     );
   }
 }
