@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unilink/views/profile.dart';
 
 class Navbar extends StatefulWidget {
   const Navbar({super.key});
@@ -42,12 +43,7 @@ class _NavbarState extends State<Navbar> {
       ),
     ),
     const Center(
-      child: Text(
-        'Profile',
-        style: TextStyle(
-          fontSize: 40,
-        ),
-      ),
+      child: ProfilePage(),
     ),
   ];
 
@@ -62,23 +58,24 @@ class _NavbarState extends State<Navbar> {
         selectedItemColor: Colors.amber,
         currentIndex: _selectedIndex,
         onTap: _onTap,
-        items:  [
+        items: [
           BottomNavigationBarItem(
-              icon: Icon(_selectedIndex == 0 ? Icons.home : Icons.home_outlined),
-              label: 'Home'
-          ),
+              icon:
+                  Icon(_selectedIndex == 0 ? Icons.home : Icons.home_outlined),
+              label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(_selectedIndex == 1 ? Icons.explore : Icons.explore_outlined),
-              label: 'Explore'
-          ),
+              icon: Icon(
+                  _selectedIndex == 1 ? Icons.explore : Icons.explore_outlined),
+              label: 'Explore'),
           BottomNavigationBarItem(
-              icon: Icon(_selectedIndex == 2 ? Icons.chat : Icons.chat_bubble_outline_outlined),
-              label: 'Chat'
-          ),
+              icon: Icon(_selectedIndex == 2
+                  ? Icons.chat
+                  : Icons.chat_bubble_outline_outlined),
+              label: 'Chat'),
           BottomNavigationBarItem(
-              icon: Icon(_selectedIndex == 3 ? Icons. person : Icons.person_outline),
-              label: 'Profile'
-          ),
+              icon: Icon(
+                  _selectedIndex == 3 ? Icons.person : Icons.person_outline),
+              label: 'Profile'),
         ],
       ),
     );
