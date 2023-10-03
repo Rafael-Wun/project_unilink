@@ -135,10 +135,4 @@ class _ProfilePageState extends State<ProfilePage>
       ],
     );
   }
-
-  Widget buildPosts() {
-    return Container(
-      
-    );
-  }
 }
