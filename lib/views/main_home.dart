@@ -19,10 +19,9 @@ class MainHome extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: ListView(
+      body: Column(
         children: <Widget>[
-          //Expanded(child: PostTime()),
-          PostTime()
+          Expanded(child: PostTime()),
         ],
       ),
     );
