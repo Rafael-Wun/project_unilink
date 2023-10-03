@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:unilink/main.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,6 +18,8 @@ class ProfilePage extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           buildHeader(),
+          SizedBox(height: deviceHeight * .3),
+          buildBody(),
         ],
       ),
     );
@@ -74,7 +81,42 @@ class ProfilePage extends StatelessWidget {
           'Photographer | Basketball',
           style: TextStyle(color: Colors.grey[400]),
         ),
+        SizedBox(
+          height: 32,
+        ),
+        Row(
+          children: [
+            Text('999 Followers'),
+            SizedBox(
+              width: 16,
+            ),
+            Text(
+              '|',
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 24,
+              ),
+            ),
+            SizedBox(
+              width: 16,
+            ),
+            Text('999 Following'),
+          ],
+        ),
       ],
+    );
+  }
+
+  Widget buildBody() {
+    return Container(
+      margin: EdgeInsets.only(left: 8.0, right: 8.0),
+      padding: EdgeInsets.all(16.0),
+      width: deviceWidth,
+      height: deviceHeight,
+      decoration: BoxDecoration(
+        color: Colors.grey[200],
+        borderRadius: BorderRadius.circular(24.0),
+      ),
     );
   }
 }
