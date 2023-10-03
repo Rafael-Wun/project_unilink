@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unilink/views/main_home.dart';
+import 'package:unilink/views/components/post_timeline.dart';
 import 'package:unilink/views/profile.dart';
 
 class Navbar extends StatefulWidget {
@@ -19,7 +19,7 @@ class _NavbarState extends State<Navbar> {
   }
 
   List<Widget> pages = [
-    MainHome(),
+    PostTime(),
     const Center(
       child: Text(
         'Explore',
