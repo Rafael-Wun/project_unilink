@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unilink/views/main_home.dart';
 import 'package:unilink/views/profile.dart';
 
 class Navbar extends StatefulWidget {
@@ -18,14 +19,7 @@ class _NavbarState extends State<Navbar> {
   }
 
   List<Widget> pages = [
-    const Center(
-      child: Text(
-        'Home',
-        style: TextStyle(
-          fontSize: 40,
-        ),
-      ),
-    ),
+    MainHome(),
     const Center(
       child: Text(
         'Explore',
