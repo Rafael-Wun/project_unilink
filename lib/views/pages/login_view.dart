@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:unilink/views/main_menu.dart';
 
-
-class LoginHome extends StatefulWidget {
-  const LoginHome({super.key});
+class LoginView extends StatefulWidget {
+  const LoginView({super.key});
 
   @override
-  State<LoginHome> createState() => _LoginHomeState();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class _LoginHomeState extends State<LoginHome> {
+class _LoginViewState extends State<LoginView> {
   final _passController = TextEditingController();
   final _emailController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   bool loggedIn = false;
-  late String password;
 
   void _validate() {
     final form = _formKey.currentState;
@@ -26,8 +24,10 @@ class _LoginHomeState extends State<LoginHome> {
     final password = _passController.text;
     final email = _emailController.text;
 
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => MainMenu(password:password, email:email)),
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (_) => MainMenu(password: password, email: email),
+      ),
     );
   }
 
@@ -57,10 +57,7 @@ class _LoginHomeState extends State<LoginHome> {
             padding: EdgeInsets.only(top: 140),
             child: Text(
               "WELCOME",
-              style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold
-              ),
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
           ),
         ],
@@ -72,7 +69,7 @@ class _LoginHomeState extends State<LoginHome> {
     return Form(
       key: _formKey,
       child: Padding(
-        padding: const EdgeInsets.all(50.0),
+        padding: const EdgeInsets.all(24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -81,15 +78,14 @@ class _LoginHomeState extends State<LoginHome> {
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(10.0),
                     borderSide: BorderSide(),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(10.0),
                     borderSide: BorderSide(),
                   ),
-                  labelText: 'Email'
-              ),
+                  labelText: 'Email'),
               validator: (text) {
                 if (text!.isEmpty) {
                   return 'Enter email.';
@@ -102,50 +98,46 @@ class _LoginHomeState extends State<LoginHome> {
               },
             ),
             SizedBox(
-              height: 20,
+              height: 24,
             ),
             TextFormField(
               controller: _passController,
               obscureText: true,
               decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(10.0),
                     borderSide: BorderSide(),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(10.0),
                     borderSide: BorderSide(),
                   ),
-                  labelText: 'Password'
-              ),
-              validator: (text) => text!.isEmpty ? 'Enter the Password\'s password.' : null,
+                  labelText: 'Password'),
+              validator: (text) =>
+                  text!.isEmpty ? 'Enter the Password\'s password.' : null,
             ),
-            SizedBox(height: 50),
+            SizedBox(height: 72),
             ElevatedButton(
               onPressed: _validate,
               child: Text(
                 'LOGIN',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold
-                ),
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
               ),
               style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
                 backgroundColor: Colors.amber,
-                padding:EdgeInsets.only(left: 50, right: 50, top: 15, bottom: 15),
+                padding: EdgeInsets.fromLTRB(56, 14, 56, 14),
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 25),
+              padding: EdgeInsets.only(top: 32),
               child: Text(
                 "Lupa Password?",
                 style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    color: Colors.indigo
-                ),
+                    decoration: TextDecoration.underline, color: Colors.indigo),
               ),
             ),
             Padding(
@@ -153,9 +145,7 @@ class _LoginHomeState extends State<LoginHome> {
               child: Text(
                 "Buat Akun!",
                 style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    color: Colors.indigo
-                ),
+                    decoration: TextDecoration.underline, color: Colors.indigo),
               ),
             ),
           ],

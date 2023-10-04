@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unilink/views/components/explore_componenet.dart';
 import 'package:unilink/views/main_menu.dart';
-import 'package:unilink/views/pages/explore_view.dart';
 import 'package:unilink/views/pages/login_home.dart';
 
 void main() => runApp(UnilinkApp());
@@ -19,7 +17,6 @@ class UnilinkApp extends StatelessWidget {
       title: 'Unilink App',
       //home: MainMenu(),
       home: LoginHome(),
-      //home: Explore(),
     );
   }
 }
