@@ -3,12 +3,14 @@ import 'package:unilink/views/components/direct_msg.dart';
 import 'package:unilink/views/components/group_msg.dart';
 import 'package:unilink/views/components/story.dart';
 
+
 class ChatView extends StatefulWidget {
   const ChatView({super.key});
 
   @override
   State<ChatView> createState() => _ChatViewState();
 }
+
 
 class _ChatViewState extends State<ChatView> {
   List<Story> stories = List.generate(6, (index) => Story());

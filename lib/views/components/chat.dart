@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unilink/views/components/chat_list.dart';
 
 class Chat extends StatefulWidget {
   const Chat({super.key});
@@ -10,19 +11,46 @@ class Chat extends StatefulWidget {
 class _ChatState extends State<Chat> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          CircleAvatar(
-            backgroundColor: Colors.grey,
-          ),
-          Column(
-            children: [
-              Text('username'),
-              Text('the fox is jumping around the fence'),
-            ],
-          ),
-        ],
+    return GestureDetector(
+      onTap: (){
+      },
+      child: Container(
+        padding: EdgeInsets.only(left: 16,right: 16,top: 10,bottom: 10),
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: Row(
+                children: <Widget>[
+                  CircleAvatar(
+                    backgroundColor: Colors.grey,
+                    maxRadius: 30,
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return ChatDetailPage();
+                      }));
+                    },
+                  ),
+                  SizedBox(width: 16,),
+                  Expanded(
+                    child: Container(
+                      color: Colors.transparent,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text('Username'),
+                          SizedBox(height: 6,),
+                          Text('The Fox'),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
