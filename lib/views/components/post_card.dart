@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
 
 class PostCard extends StatefulWidget {
-  const PostCard({super.key});
+  final String avatar;
+  final String username;
+  final String caption;
+  final String photo;
+
+  const PostCard({
+    Key? key,
+    required this.avatar,
+    required this.username,
+    required this.caption,
+    required this.photo,
+  }) : super(key: key);
 
   @override
   State<PostCard> createState() => _PostCardState();
@@ -36,13 +47,12 @@ class _PostCardState extends State<PostCard> {
           Row(
             children: [
               CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://images.unsplash.com/photo-1591160690555-5debfba289f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z29sZGVuJTIwcmV0cmlldmVyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'),
+                backgroundImage: NetworkImage('${widget.avatar}'),
               ),
               SizedBox(
                 width: 16.0,
               ),
-              Text('Username'),
+              Text('${widget.username}'),
             ],
           ),
           Row(
@@ -57,8 +67,7 @@ class _PostCardState extends State<PostCard> {
 
   Widget _buildPostContent() {
     return Container(
-      child: Image.network(
-          'https://images.unsplash.com/photo-1625794084867-8ddd239946b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Z29sZGVuJTIwcmV0cmlldmVyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'),
+      child: Image.network('${widget.photo}'),
     );
   }
 
@@ -93,7 +102,7 @@ class _PostCardState extends State<PostCard> {
       padding: EdgeInsetsDirectional.all(16.0),
       child: Expanded(
         child: Text(
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae nunc sed velit dignissim sodales ut eu sem integer.',
+          '${widget.caption}',
         ),
       ),
     );
