@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:unilink/views/components/nav.dart';
+import 'package:unilink/views/main_menu.dart';
 
-void main() => runApp(StopwatchApp());
+void main() => runApp(UnilinkApp());
 
-double deviceWidth = 0;
-double deviceHeight = 0;
+late double deviceWidth;
+late double deviceHeight;
 
-class StopwatchApp extends StatelessWidget {
+class UnilinkApp extends StatelessWidget {
   Widget build(BuildContext context) {
     deviceWidth = MediaQuery.of(context).size.width;
     deviceHeight = MediaQuery.of(context).size.height;
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Navbar(),
+      title: 'Unilink App',
+      home: MainMenu(),
     );
   }
 }
