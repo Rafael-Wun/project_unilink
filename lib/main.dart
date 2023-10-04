@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:unilink/views/main_menu.dart';
 import 'package:unilink/views/pages/login_view.dart';
 
 void main() => runApp(UnilinkApp());
@@ -15,7 +14,6 @@ class UnilinkApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Unilink App',
-      //home: MainMenu(),
       home: LoginView(),
     );
   }

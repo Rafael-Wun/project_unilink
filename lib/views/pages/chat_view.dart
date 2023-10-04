@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:unilink/main.dart';
 import 'package:unilink/views/components/direct_msg.dart';
 import 'package:unilink/views/components/group_msg.dart';
 import 'package:unilink/views/components/story.dart';
-
 
 class ChatView extends StatefulWidget {
   const ChatView({super.key});
@@ -10,7 +10,6 @@ class ChatView extends StatefulWidget {
   @override
   State<ChatView> createState() => _ChatViewState();
 }
-
 
 class _ChatViewState extends State<ChatView> {
   List<Story> stories = List.generate(6, (index) => Story());
@@ -74,7 +73,7 @@ class _ChatViewState extends State<ChatView> {
               ),
               TabBar(tabs: tabs),
               SizedBox(
-                height: 640,
+                height: deviceHeight * .5,
                 child: TabBarView(
                   children: tabBarViews,
                 ),

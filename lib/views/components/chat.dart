@@ -12,10 +12,13 @@ class _ChatState extends State<Chat> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return ChatDetailPage();
+        }));
       },
       child: Container(
-        padding: EdgeInsets.only(left: 16,right: 16,top: 10,bottom: 10),
+        padding: EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10),
         child: Row(
           children: <Widget>[
             Expanded(
@@ -25,14 +28,9 @@ class _ChatState extends State<Chat> {
                     backgroundColor: Colors.grey,
                     maxRadius: 30,
                   ),
-                  GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return ChatDetailPage();
-                      }));
-                    },
+                  SizedBox(
+                    width: 16,
                   ),
-                  SizedBox(width: 16,),
                   Expanded(
                     child: Container(
                       color: Colors.transparent,
@@ -40,7 +38,9 @@ class _ChatState extends State<Chat> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text('Username'),
-                          SizedBox(height: 6,),
+                          SizedBox(
+                            height: 6,
+                          ),
                           Text('The Fox'),
                         ],
                       ),
