@@ -35,7 +35,7 @@ class _LoginHomeState extends State<LoginHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.black26,
+        color: Colors.white70,
         child: ListView(
           children: <Widget>[
             _title(),
@@ -69,12 +69,7 @@ class _LoginHomeState extends State<LoginHome> {
   }
 
   Widget _login() {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-
-      ),
+    return Form(
       key: _formKey,
       child: Padding(
         padding: const EdgeInsets.all(50.0),
@@ -84,7 +79,17 @@ class _LoginHomeState extends State<LoginHome> {
             TextFormField(
               controller: _emailController,
               keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(labelText: 'Email'),
+              decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(),
+                  ),
+                  labelText: 'Email'
+              ),
               validator: (text) {
                 if (text!.isEmpty) {
                   return 'Enter email.';
@@ -96,10 +101,23 @@ class _LoginHomeState extends State<LoginHome> {
                 return null;
               },
             ),
+            SizedBox(
+              height: 20,
+            ),
             TextFormField(
               controller: _passController,
               obscureText: true,
-              decoration: InputDecoration(labelText: 'Password'),
+              decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(),
+                  ),
+                  labelText: 'Password'
+              ),
               validator: (text) => text!.isEmpty ? 'Enter the Password\'s password.' : null,
             ),
             SizedBox(height: 50),
@@ -112,9 +130,12 @@ class _LoginHomeState extends State<LoginHome> {
                     fontWeight: FontWeight.bold
                 ),
               ),
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.amber),
-                padding: MaterialStateProperty.all(EdgeInsets.only(left: 50, right: 50, top: 15, bottom: 15)),
+              style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                backgroundColor: Colors.amber,
+                padding:EdgeInsets.only(left: 50, right: 50, top: 15, bottom: 15),
               ),
             ),
             Padding(
