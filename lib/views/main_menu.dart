@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:persistent_bottom_nav_bar/persistent_tab_view.dart";
+import 'package:unilink/views/pages/explore_view.dart';
 
 import 'pages/home_view.dart';
 import 'pages/explore_view.dart';
@@ -55,7 +56,7 @@ class _MainMenuState extends State<MainMenu> {
   List<Widget> _buildScreens() {
     return [
       HomeView(),
-      ExploreView(),
+      Explore(),
       ChatView(),
       ProfileView(),
     ];

@@ -1,17 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:unilink/views/components/explore_componenet.dart';
+import 'package:unilink/views/components/search_explore.dart';
 
-class ExploreView extends StatefulWidget {
-  const ExploreView({super.key});
+class Explore extends StatefulWidget {
+  const Explore({super.key});
 
   @override
-  State<ExploreView> createState() => _ExploreViewState();
+  State<Explore> createState() => _ExploreState();
 }
 
-class _ExploreViewState extends State<ExploreView> {
+class _ExploreState extends State<Explore> {
+   ExplorComponent kategori1 = ExplorComponent();
+   ExplorComponent kategori2 = ExplorComponent();
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Explore'),
+    return Scaffold(
+      // appBar: AppBar(title: Text('Unilink')),
+      body: Container(
+        color: Colors.white70,
+        child: ListView(
+           children: <Widget>[
+             Padding(
+               padding: EdgeInsets.all(16.0),
+               child: Column(children: [
+                 SearchExp(),
+                  kategori1,
+                 kategori2
+               ]),
+             ),
+           ],
+        ),
+      ),
     );
   }
 }
