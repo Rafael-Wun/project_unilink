@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unilink/views/components/chat.dart';
+import 'package:unilink/views/components/group.dart';
 
 class GroupMsg extends StatefulWidget {
   const GroupMsg({super.key});
@@ -9,8 +9,8 @@ class GroupMsg extends StatefulWidget {
 }
 
 class _GroupMsgState extends State<GroupMsg> {
-  Chat chat1 = Chat();
-  Chat chat2 = Chat();
+  Group chat1 = Group();
+  Group chat2 = Group();
 
   @override
   Widget build(BuildContext context) {
