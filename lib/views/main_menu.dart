@@ -7,7 +7,11 @@ import 'pages/chat_view.dart';
 import 'pages/profile_view.dart';
 
 class MainMenu extends StatefulWidget {
-  const MainMenu({super.key});
+  final String password;
+  final String email;
+
+  const MainMenu({Key? key, required this.password, required this.email})
+      : super(key: key);
 
   @override
   State<MainMenu> createState() => _MainMenuState();
