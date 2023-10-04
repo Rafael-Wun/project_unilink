@@ -25,19 +25,21 @@ class _MainMenuState extends State<MainMenu> {
       screens: _buildScreens(),
       items: _navbarItems(),
       confineInSafeArea: true,
+
       decoration: NavBarDecoration(
         borderRadius: BorderRadius.circular(10.0),
         colorBehindNavBar: Colors.white,
       ),
+
       popAllScreensOnTapOfSelectedTab: true,
       popActionScreens: PopActionScreensType.all,
+
       itemAnimationProperties: ItemAnimationProperties(
-        // Navigation Bar's items animation properties.
         duration: Duration(milliseconds: 200),
         curve: Curves.ease,
       ),
+      
       screenTransitionAnimation: ScreenTransitionAnimation(
-        // Screen transition animation on change of selected tab.
         animateTabTransition: true,
         curve: Curves.ease,
         duration: Duration(milliseconds: 200),
@@ -58,7 +60,10 @@ class _MainMenuState extends State<MainMenu> {
   List<PersistentBottomNavBarItem> _navbarItems() {
     return [
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.home),
+        icon: Icon(
+          Icons.home,
+          size: 30,
+        ),
         title: ("Home"),
         activeColorPrimary: Colors.blue,
         inactiveColorPrimary: Colors.grey,
@@ -70,13 +75,19 @@ class _MainMenuState extends State<MainMenu> {
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.chat_bubble),
+        icon: Icon(
+          Icons.chat_bubble,
+          size: 26,
+        ),
         title: ("Chat"),
         activeColorPrimary: Colors.blue,
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.person),
+        icon: Icon(
+          Icons.person,
+          size: 30,
+        ),
         title: ("Profile"),
         activeColorPrimary: Colors.blue,
         inactiveColorPrimary: Colors.grey,
