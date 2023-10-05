@@ -27,6 +27,7 @@ class _GroupState extends State<Group> {
                   CircleAvatar(
                     backgroundColor: Colors.grey,
                     maxRadius: 30,
+                    backgroundImage: NetworkImage('https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JvdXB8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'),
                   ),
                   SizedBox(
                     width: 16,
