@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unilink/views/components/text_field.dart';
 
 class SearchExp extends StatefulWidget {
   const SearchExp({super.key});
@@ -8,13 +9,13 @@ class SearchExp extends StatefulWidget {
 }
 
 class _SearchExpState extends State<SearchExp> {
+  TextEditingController controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        children: [
-          _searchbar()
-        ],
+        children: [_searchbar()],
       ),
     );
   }
@@ -22,23 +23,19 @@ class _SearchExpState extends State<SearchExp> {
   Widget _searchbar() {
     return Form(
       child: Padding(
-        padding: const EdgeInsets.all(15),
+        padding: const EdgeInsets.symmetric(horizontal: 4.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50)
-                  ),
-                  hintText: 'Search Here'
-              ),
-            ),
+            NewTextField(
+              controller: controller,
+              labelText: 'Search Here',
+              obsecureText: false,
+              borderRadius: 50.0,
+            )
           ],
         ),
       ),
     );
   }
-
 }

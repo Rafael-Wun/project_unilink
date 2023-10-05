@@ -18,7 +18,11 @@ class _TaggedGridState extends State<TaggedGrid> {
       gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3),
       itemBuilder: (context, index) => Image.network(
-          'https://images.unsplash.com/photo-1530543591690-29750de55028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80'),
+        'https://images.unsplash.com/photo-1505852679233-d9fd70aff56d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTh8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
+        width: 120,
+        height: 120,
+        fit: BoxFit.cover,
+      ),
     );
   }
 }

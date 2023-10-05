@@ -36,14 +36,23 @@ class _EditProfileViewState extends State<EditProfile> {
               SizedBox(
                 height: deviceHeight * .1,
               ),
-              _buildProfile(),
-              _displayname(),
-              _university(),
-              _Aboutme(),
-              _accom(),
-              _Email(),
-              _Password(),
-              _Logout(),
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    _displayname(),
+                    _university(),
+                    _Aboutme(),
+                    _accom(),
+                    _Email(),
+                    _Password(),
+                    SizedBox(
+                      height: 24.0,
+                    ),
+                    _Logout(),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
@@ -68,8 +77,8 @@ class _EditProfileViewState extends State<EditProfile> {
   Widget buildCoverImage() {
     return Container(
       color: Colors.grey,
-      child: Image.asset(
-        'assets/tori_gate.jpg',
+      child: Image.network(
+        '${currentUser.coverImage}',
         width: deviceWidth,
         height: deviceHeight * .2,
         fit: BoxFit.cover,
@@ -81,154 +90,133 @@ class _EditProfileViewState extends State<EditProfile> {
     return Column(
       children: [
         CircleAvatar(
-          backgroundImage: AssetImage('assets/hyouka.jpg'),
+          backgroundImage: NetworkImage('${currentUser.avatar}'),
           radius: 64,
-        ),
-      ],
-    );
-  }
-
-  Widget _buildProfile() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text(
-          'Matthew Rene',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(
-          height: 4,
         ),
       ],
     );
   }
 }
 
-  Widget _displayname() {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          child: TextField(
-            decoration: InputDecoration(labelText: 'Display Name'),
-            onChanged: (value) {
-              // Logika saat teks berubah
-            },
-          ),
-        ),
-        IconButton(
-          icon: Icon(Icons.edit),
-          onPressed: () {
-            // Logika saat tombol edit ditekan
+Widget _displayname() {
+  return Row(
+    children: <Widget>[
+      Expanded(
+        child: TextField(
+          decoration: InputDecoration(labelText: 'Display Name'),
+          onChanged: (value) {
+            // Logika saat teks berubah
           },
         ),
-      ],
-    );
-  }
+      ),
+      IconButton(
+        icon: Icon(Icons.check),
+        onPressed: () {
+          // Logika saat tombol edit ditekan
+        },
+      ),
+    ],
+  );
+}
 
-  Widget _university() {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          child: TextField(
-            decoration: InputDecoration(labelText: 'University'),
-            onChanged: (value) {
-            },
-          ),
+Widget _university() {
+  return Row(
+    children: <Widget>[
+      Expanded(
+        child: TextField(
+          decoration: InputDecoration(labelText: 'University'),
+          onChanged: (value) {},
         ),
-        IconButton(
-          icon: Icon(Icons.edit),
-          onPressed: () {
+      ),
+      IconButton(
+        icon: Icon(Icons.check),
+        onPressed: () {},
+      ),
+    ],
+  );
+}
+
+Widget _Aboutme() {
+  return Row(
+    children: <Widget>[
+      Expanded(
+        child: TextField(
+          decoration: InputDecoration(labelText: 'About Me'),
+          onChanged: (value) {},
+        ),
+      ),
+      IconButton(
+        icon: Icon(Icons.check),
+        onPressed: () {},
+      ),
+    ],
+  );
+}
+
+Widget _accom() {
+  return Row(
+    children: <Widget>[
+      Expanded(
+        child: TextField(
+          decoration: InputDecoration(labelText: 'Accomplishment'),
+          onChanged: (value) {},
+        ),
+      ),
+      IconButton(
+        icon: Icon(Icons.check),
+        onPressed: () {},
+      ),
+    ],
+  );
+}
+
+Widget _Email() {
+  return Row(
+    children: <Widget>[
+      Expanded(
+        child: TextField(
+          decoration: InputDecoration(labelText: 'Email'),
+          onChanged: (value) {
+            // Logika saat teks berubah
           },
         ),
-      ],
-    );
-  }
+      ),
+      IconButton(
+        icon: Icon(Icons.check),
+        onPressed: () {
+          // Logika saat tombol edit ditekan
+        },
+      ),
+    ],
+  );
+}
 
-  Widget _Aboutme() {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          child: TextField(
-            decoration: InputDecoration(labelText: 'About Me'),
-            onChanged: (value) {
-            },
-          ),
-        ),
-        IconButton(
-          icon: Icon(Icons.edit),
-          onPressed: () {
+Widget _Password() {
+  return Row(
+    children: <Widget>[
+      Expanded(
+        child: TextField(
+          decoration: InputDecoration(labelText: 'Password'),
+          onChanged: (value) {
+            // Logika saat teks berubah
           },
         ),
-      ],
-    );
-  }
+      ),
+      IconButton(
+        icon: Icon(Icons.check),
+        onPressed: () {
+          // Logika saat tombol edit ditekan
+        },
+      ),
+    ],
+  );
+}
 
-  Widget _accom() {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          child: TextField(
-            decoration: InputDecoration(labelText: 'Accomplishment'),
-            onChanged: (value) {
-            },
-          ),
-        ),
-        IconButton(
-          icon: Icon(Icons.edit),
-          onPressed: () {
-          },
-        ),
-      ],
-    );
-  }
-
-  Widget _Email() {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          child: TextField(
-            decoration: InputDecoration(labelText: 'Email'),
-            onChanged: (value) {
-              // Logika saat teks berubah
-            },
-          ),
-        ),
-        IconButton(
-          icon: Icon(Icons.edit),
-          onPressed: () {
-            // Logika saat tombol edit ditekan
-          },
-        ),
-      ],
-    );
-  }
-
-  Widget _Password() {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          child: TextField(
-            decoration: InputDecoration(labelText: 'Password'),
-            onChanged: (value) {
-              // Logika saat teks berubah
-            },
-          ),
-        ),
-        IconButton(
-          icon: Icon(Icons.edit),
-          onPressed: () {
-            // Logika saat tombol edit ditekan
-          },
-        ),
-      ],
-    );
-  }
-
-  Widget _Logout() {
-    return ElevatedButton (
-      onPressed: (){
-        _Logout();
+Widget _Logout() {
+  return ElevatedButton(
+    onPressed: () {
+      _Logout();
     },
-      child: Text('Log Out'),
-    );
-  }
+    child: Text('Log Out'),
+  );
+}

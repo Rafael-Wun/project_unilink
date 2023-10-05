@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unilink/main.dart';
+import 'package:unilink/views/colors/colors.dart';
 import 'package:unilink/views/pages/edit_profile.dart';
 import 'package:unilink/views/components/profile/post_grid.dart';
 import 'package:unilink/views/components/profile/tagged_grid.dart';
@@ -47,6 +48,7 @@ class _ProfileViewState extends State<ProfileView> {
               _buildProfile(),
               TabBar(
                 tabs: tabs,
+                indicatorColor: AppColors.secondaryColor,
               ),
               SizedBox(
                 height: 640,
@@ -78,8 +80,8 @@ class _ProfileViewState extends State<ProfileView> {
   Widget buildCoverImage() {
     return Container(
       color: Colors.grey,
-      child: Image.asset(
-        'assets/tori_gate.jpg',
+      child: Image.network(
+        '${currentUser.coverImage}',
         width: deviceWidth,
         height: deviceHeight * .2,
         fit: BoxFit.cover,
@@ -91,7 +93,7 @@ class _ProfileViewState extends State<ProfileView> {
     return Column(
       children: [
         CircleAvatar(
-          backgroundImage: AssetImage('assets/hyouka.jpg'),
+          backgroundImage: NetworkImage('${currentUser.avatar}'),
           radius: 64,
         ),
       ],
@@ -103,14 +105,14 @@ class _ProfileViewState extends State<ProfileView> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          'Matthew Rene',
+          '${currentUser.fName} ' + '${currentUser.lName}',
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
         SizedBox(
           height: 4,
         ),
         Text(
-          'Student of Tarumanagara University',
+          'Student of ' + '${currentUser.univ}' + ' University',
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
@@ -127,8 +129,9 @@ class _ProfileViewState extends State<ProfileView> {
             }));
           },
           child: Text(
-            'Photographer | Basketball',
+            '${currentUser.bio}',
             style: TextStyle(color: Colors.grey[400]),
+            textAlign: TextAlign.center,
           ),
         ),
         SizedBox(
@@ -150,14 +153,14 @@ class _ProfileViewState extends State<ProfileView> {
         TextButton(
           onPressed: dummy,
           child: Text(
-            '999 Followers',
+            '${currentUser.followers} Followers',
             style: TextStyle(color: Colors.black),
           ),
         ),
         TextButton(
           onPressed: dummy,
           child: Text(
-            '999 Following',
+            '${currentUser.following} Following',
             style: TextStyle(color: Colors.black),
           ),
         ),

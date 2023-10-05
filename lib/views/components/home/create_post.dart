@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unilink/main.dart';
 import 'package:unilink/views/colors/colors.dart';
 import 'package:unilink/views/components/text_field.dart';
 
@@ -40,7 +41,7 @@ class _CreatePostState extends State<CreatePost> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         CircleAvatar(
-          backgroundImage: AssetImage('assets/hyouka.jpg'),
+          backgroundImage: NetworkImage('${currentUser.avatar}'),
           radius: 24,
         ),
         SizedBox(

@@ -10,8 +10,8 @@ class Explore extends StatefulWidget {
 }
 
 class _ExploreState extends State<Explore> {
-   ExplorComponent kategori1 = ExplorComponent();
-   ExplorComponent kategori2 = ExplorComponent();
+  ExplorComponent kategori1 = ExplorComponent();
+  ExplorComponent kategori2 = ExplorComponent();
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +20,16 @@ class _ExploreState extends State<Explore> {
       body: Container(
         color: Colors.white70,
         child: ListView(
-           children: <Widget>[
-             Padding(
-               padding: EdgeInsets.all(16.0),
-               child: Column(children: [
-                 SearchExp(),
-                  kategori1,
-                 kategori2
-               ]),
-             ),
-           ],
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Column(children: [
+                SearchExp(),
+                kategori1,
+                kategori2,
+              ]),
+            ),
+          ],
         ),
       ),
     );
