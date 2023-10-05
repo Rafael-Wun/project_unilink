@@ -8,6 +8,9 @@ class CreatePost extends StatefulWidget {
 }
 
 class _CreatePostState extends State<CreatePost> {
+
+  final _postController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
