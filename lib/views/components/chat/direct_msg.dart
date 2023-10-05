@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unilink/views/components/chat.dart';
+import 'package:unilink/views/components/chat/chat.dart';
 
 class DirectMsg extends StatefulWidget {
   const DirectMsg({super.key});

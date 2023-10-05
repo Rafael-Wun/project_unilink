@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:unilink/main.dart';
-import 'package:unilink/views/components/post_grid.dart';
-import 'package:unilink/views/components/tagged_grid.dart';
 import 'package:unilink/views/pages/edit_profile.dart';
+import 'package:unilink/views/components/profile/post_grid.dart';
+import 'package:unilink/views/components/profile/tagged_grid.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});

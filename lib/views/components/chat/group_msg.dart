@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unilink/views/components/group.dart';
+import 'package:unilink/views/components/chat/group.dart';
 
 class GroupMsg extends StatefulWidget {
   const GroupMsg({super.key});

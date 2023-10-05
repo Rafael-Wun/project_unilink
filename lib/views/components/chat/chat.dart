@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unilink/views/components/chat_list.dart';
+import 'package:unilink/views/components/chat/chat_list.dart';
 
 class Chat extends StatefulWidget {
   const Chat({super.key});

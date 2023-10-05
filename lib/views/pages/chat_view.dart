@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:unilink/main.dart';
-import 'package:unilink/views/components/direct_msg.dart';
-import 'package:unilink/views/components/group_msg.dart';
-import 'package:unilink/views/components/story.dart';
+import 'package:unilink/views/components/chat/direct_msg.dart';
+import 'package:unilink/views/components/chat/group_msg.dart';
+import 'package:unilink/views/components/chat/story.dart';
 
 class ChatView extends StatefulWidget {
   const ChatView({super.key});
@@ -49,7 +49,6 @@ class _ChatViewState extends State<ChatView> {
       ),
     ),
   ];
-
   final List<Widget> tabBarViews = const [
     DirectMsg(),
     GroupMsg(),

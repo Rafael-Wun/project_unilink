@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:unilink/views/components/chat_message.dart';
+import 'package:unilink/views/components/chat/chat_message.dart';
 
-class ChatDetailPage extends StatefulWidget{
+class GroupDetailPage extends StatefulWidget{
   @override
-  _ChatDetailPageState createState() => _ChatDetailPageState();
+  _GroupDetailPageState createState() => _GroupDetailPageState();
 }
 
-class _ChatDetailPageState extends State<ChatDetailPage> {
+class _GroupDetailPageState extends State<GroupDetailPage> {
 
   List<ChatMessage> messages = [
-    ChatMessage(messageContent: "Hello, Will", messageType: "receiver"),
+    ChatMessage(messageContent: "Cs ga ?", messageType: "receiver"),
     ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
     ChatMessage(messageContent: "Hey Kriss, I am doing fine dude. wbu?", messageType: "sender"),
     ChatMessage(messageContent: "ehhhh, doing OK.", messageType: "receiver"),
@@ -19,44 +19,44 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          automaticallyImplyLeading: false,
-          backgroundColor: Colors.white,
-          flexibleSpace: SafeArea(
-            child: Container(
-              padding: EdgeInsets.only(right: 16),
-              child: Row(
-                children: <Widget>[
-                  IconButton(
-                    onPressed: (){
-                      Navigator.pop(context);
-                    },
-                    icon: Icon(Icons.arrow_back,color: Colors.black,),
+      appBar: AppBar(
+        elevation: 0,
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.white,
+        flexibleSpace: SafeArea(
+          child: Container(
+            padding: EdgeInsets.only(right: 16),
+            child: Row(
+              children: <Widget>[
+                IconButton(
+                  onPressed: (){
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(Icons.arrow_back,color: Colors.black,),
+                ),
+                SizedBox(width: 2,),
+                CircleAvatar(
+                  backgroundColor: Colors.grey,
+                  maxRadius: 20,
+                ),
+                SizedBox(width: 12,),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text("CS2",style: TextStyle( fontSize: 16 ,fontWeight: FontWeight.w600),),
+                      SizedBox(height: 6,),
+                      Text("3 Online",style: TextStyle(color: Colors.grey.shade600, fontSize: 13),),
+                    ],
                   ),
-                  SizedBox(width: 2,),
-                  CircleAvatar(
-                    backgroundColor: Colors.grey,
-                    maxRadius: 20,
-                  ),
-                  SizedBox(width: 12,),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text("Kriss Benwat",style: TextStyle( fontSize: 16 ,fontWeight: FontWeight.w600),),
-                        SizedBox(height: 6,),
-                        Text("Online",style: TextStyle(color: Colors.grey.shade600, fontSize: 13),),
-                      ],
-                    ),
-                  ),
-                  Icon(Icons.settings,color: Colors.black54,),
-                ],
-              ),
+                ),
+                Icon(Icons.settings,color: Colors.black54,),
+              ],
             ),
           ),
         ),
+      ),
       body: Stack(
         children: <Widget>[
           ListView.builder(

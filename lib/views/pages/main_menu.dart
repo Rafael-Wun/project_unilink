@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:persistent_bottom_nav_bar/persistent_tab_view.dart";
+import 'package:unilink/views/colors/colors.dart';
 
 import 'explore_view.dart';
 import 'home_view.dart';
@@ -7,8 +8,8 @@ import 'chat_view.dart';
 import 'profile_view.dart';
 
 class MainMenu extends StatefulWidget {
-  final String password;
   final String email;
+  final String password;
 
   const MainMenu({Key? key, required this.password, required this.email})
       : super(key: key);
@@ -29,20 +30,16 @@ class _MainMenuState extends State<MainMenu> {
       screens: _buildScreens(),
       items: _navbarItems(),
       confineInSafeArea: true,
-
       decoration: NavBarDecoration(
         borderRadius: BorderRadius.circular(10.0),
         colorBehindNavBar: Colors.white,
       ),
-
       popAllScreensOnTapOfSelectedTab: true,
       popActionScreens: PopActionScreensType.all,
-
       itemAnimationProperties: ItemAnimationProperties(
         duration: Duration(milliseconds: 200),
         curve: Curves.ease,
       ),
-      
       screenTransitionAnimation: ScreenTransitionAnimation(
         animateTabTransition: true,
         curve: Curves.ease,
@@ -69,13 +66,13 @@ class _MainMenuState extends State<MainMenu> {
           size: 30,
         ),
         title: ("Home"),
-        activeColorPrimary: Colors.blue,
+        activeColorPrimary: AppColors.primaryColor,
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.explore),
         title: ("Explore"),
-        activeColorPrimary: Colors.blue,
+        activeColorPrimary: AppColors.primaryColor,
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
@@ -84,7 +81,7 @@ class _MainMenuState extends State<MainMenu> {
           size: 26,
         ),
         title: ("Chat"),
-        activeColorPrimary: Colors.blue,
+        activeColorPrimary: AppColors.primaryColor,
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
@@ -93,7 +90,7 @@ class _MainMenuState extends State<MainMenu> {
           size: 30,
         ),
         title: ("Profile"),
-        activeColorPrimary: Colors.blue,
+        activeColorPrimary: AppColors.primaryColor,
         inactiveColorPrimary: Colors.grey,
       ),
     ];

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unilink/views/colors/colors.dart';
 
 class PostCard extends StatefulWidget {
   final String avatar;
@@ -25,6 +26,7 @@ class _PostCardState extends State<PostCard> {
       margin: EdgeInsets.only(top: 16.0),
       decoration: BoxDecoration(
         color: Colors.white,
+        border: Border.all(color: AppColors.primaryColor, width: 1),
         borderRadius: BorderRadius.circular(8.0),
       ),
       child: Column(
@@ -59,7 +61,7 @@ class _PostCardState extends State<PostCard> {
             children: [
               Icon(Icons.more_vert),
             ],
-          )
+          ),
         ],
       ),
     );
@@ -99,11 +101,10 @@ class _PostCardState extends State<PostCard> {
 
   Widget _buildPostBody() {
     return Padding(
-      padding: EdgeInsetsDirectional.all(16.0),
-      child: Expanded(
-        child: Text(
-          '${widget.caption}',
-        ),
+      padding: EdgeInsets.all(16.0),
+      child: Text(
+        '${widget.caption}',
+        textAlign: TextAlign.start,
       ),
     );
   }

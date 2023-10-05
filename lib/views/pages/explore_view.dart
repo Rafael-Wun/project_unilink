@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:unilink/views/components/explore_componenet.dart';
-import 'package:unilink/views/components/search_explore.dart';
+import 'package:unilink/views/components/explore/explore_componenet.dart';
+import 'package:unilink/views/components/explore/search_explore.dart';
 
 class Explore extends StatefulWidget {
   const Explore({super.key});
