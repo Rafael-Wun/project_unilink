@@ -122,13 +122,13 @@ class _LoginViewState extends State<LoginView> {
               child: Text(
                 'LOGIN',
                 style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50.0),
                 ),
-                backgroundColor: Colors.amber,
+                backgroundColor: Colors.brown,
                 padding: EdgeInsets.fromLTRB(56, 14, 56, 14),
               ),
             ),

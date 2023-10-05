@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unilink/views/colors/colors.dart';
+import 'package:unilink/views/pages/other_profile_view.dart';
 
 class PostCard extends StatefulWidget {
   final String avatar;
@@ -46,7 +47,13 @@ class _PostCardState extends State<PostCard> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return OtherProfile();
+              }));
+            },
+            child: Row(
             children: [
               CircleAvatar(
                 backgroundImage: NetworkImage('${widget.avatar}'),
@@ -56,7 +63,7 @@ class _PostCardState extends State<PostCard> {
               ),
               Text('${widget.username}'),
             ],
-          ),
+          ),),
           Row(
             children: [
               Icon(Icons.more_vert),

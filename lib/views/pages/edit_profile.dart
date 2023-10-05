@@ -29,6 +29,33 @@ class _EditProfileViewState extends State<EditProfile> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.brown,
+          flexibleSpace: SafeArea(
+            child: Container(
+              padding: EdgeInsets.only(right: 16),
+              child: Row(
+                children: <Widget>[
+                  IconButton (
+                    onPressed: (){
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(Icons.arrow_back, color: Colors.white,),
+                  ),
+                  Text(
+                    "Edit Akun",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
         body: SafeArea(
           child: ListView(
             children: [
@@ -218,5 +245,12 @@ Widget _Logout() {
       _Logout();
     },
     child: Text('Log Out'),
+    style: ElevatedButton.styleFrom(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(50.0),
+      ),
+      backgroundColor: Colors.red,
+      padding: EdgeInsets.fromLTRB(56, 14, 56, 14),
+    ),
   );
 }

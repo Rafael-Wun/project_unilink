@@ -38,6 +38,34 @@ class _OtherProfileState extends State<OtherProfile> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          // title: Text("BudiRene"),
+          backgroundColor: Colors.brown,
+          flexibleSpace: SafeArea(
+            child: Container(
+              padding: EdgeInsets.only(right: 16),
+              child: Row(
+                children: <Widget>[
+                  IconButton (
+                    onPressed: (){
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(Icons.arrow_back, color: Colors.white,),
+                  ),
+                  Text(
+                      "Anthony",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
         body: SafeArea(
           child: ListView(
             children: [
@@ -104,7 +132,7 @@ class _OtherProfileState extends State<OtherProfile> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          'Budi Rene',
+          'Anthony',
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
         SizedBox(
