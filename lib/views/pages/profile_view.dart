@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unilink/main.dart';
 import 'package:unilink/views/components/post_grid.dart';
 import 'package:unilink/views/components/tagged_grid.dart';
+import 'package:unilink/views/pages/edit_profile.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
@@ -119,9 +120,16 @@ class _ProfileViewState extends State<ProfileView> {
         SizedBox(
           height: 8,
         ),
-        Text(
-          'Photographer | Basketball',
-          style: TextStyle(color: Colors.grey[400]),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return EditProfile();
+            }));
+          },
+          child: Text(
+            'Photographer | Basketball',
+            style: TextStyle(color: Colors.grey[400]),
+          ),
         ),
         SizedBox(
           height: 8,

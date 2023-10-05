@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unilink/views/main_menu.dart';
+import 'package:unilink/views/pages/main_menu.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});

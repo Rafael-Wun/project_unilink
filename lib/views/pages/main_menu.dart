@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import "package:persistent_bottom_nav_bar/persistent_tab_view.dart";
 
-import 'pages/explore_view.dart';
-import 'pages/home_view.dart';
-import 'pages/chat_view.dart';
-import 'pages/profile_view.dart';
+import 'explore_view.dart';
+import 'home_view.dart';
+import 'chat_view.dart';
+import 'profile_view.dart';
 
 class MainMenu extends StatefulWidget {
   final String password;
