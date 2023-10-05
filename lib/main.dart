@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unilink/views/pages/login_view.dart';
+import 'package:unilink/views/pages/other_profile_view.dart';
 
 void main() => runApp(UnilinkApp());
 
