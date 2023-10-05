@@ -3,6 +3,7 @@ import 'package:unilink/main.dart';
 import 'package:unilink/views/components/chat/direct_msg.dart';
 import 'package:unilink/views/components/chat/group_msg.dart';
 import 'package:unilink/views/components/chat/story.dart';
+import 'package:unilink/views/colors/colors.dart';
 
 class ChatView extends StatefulWidget {
   const ChatView({super.key});
@@ -57,7 +58,7 @@ class _ChatViewState extends State<ChatView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Hi, Matthew')),
+      appBar: AppBar(title: Text('Hi, Matthew'), backgroundColor: AppColors.primaryColor),
       body: Container(
         color: Colors.grey.shade200,
         child: DefaultTabController(
@@ -70,7 +71,7 @@ class _ChatViewState extends State<ChatView> {
                   children: stories,
                 ),
               ),
-              TabBar(tabs: tabs),
+              TabBar(tabs: tabs, indicatorColor: AppColors.secondaryColor,),
               SizedBox(
                 height: deviceHeight * .5,
                 child: TabBarView(
