@@ -2,7 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:unilink/views/components/chat/chat_list.dart';
 
 class Chat extends StatefulWidget {
-  const Chat({super.key});
+  final String avatar;
+  final String username;
+  final String recentChat;
+
+  const Chat({
+    Key? key,
+    required this.avatar,
+    required this.username,
+    required this.recentChat,
+  }) : super(key: key);
 
   @override
   State<Chat> createState() => _ChatState();
@@ -27,7 +36,9 @@ class _ChatState extends State<Chat> {
                   CircleAvatar(
                     backgroundColor: Colors.grey,
                     maxRadius: 30,
-                    backgroundImage: NetworkImage('https://images.unsplash.com/photo-1500662434123-4d06b56a762f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzB8fGNvdXBsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'),
+                    backgroundImage: NetworkImage(
+                      '${widget.avatar}',
+                    ),
                   ),
                   SizedBox(
                     width: 16,
@@ -38,11 +49,11 @@ class _ChatState extends State<Chat> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text('Username'),
+                          Text('${widget.username}'),
                           SizedBox(
                             height: 6,
                           ),
-                          Text('The Fox'),
+                          Text('${widget.recentChat}'),
                         ],
                       ),
                     ),

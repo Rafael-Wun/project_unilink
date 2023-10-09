@@ -2,7 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:unilink/views/components/chat/group_list.dart';
 
 class Group extends StatefulWidget {
-  const Group({super.key});
+  final String avatar;
+  final String groupname;
+  final String recentChat;
+
+  const Group({
+    Key? key,
+    required this.avatar,
+    required this.groupname,
+    required this.recentChat,
+  }) : super(key: key);
 
   @override
   State<Group> createState() => _GroupState();
@@ -27,7 +36,8 @@ class _GroupState extends State<Group> {
                   CircleAvatar(
                     backgroundColor: Colors.grey,
                     maxRadius: 30,
-                    backgroundImage: NetworkImage('https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JvdXB8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'),
+                    backgroundImage: NetworkImage(
+                        '${widget.avatar}'),
                   ),
                   SizedBox(
                     width: 16,
@@ -38,11 +48,11 @@ class _GroupState extends State<Group> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text('CS2'),
+                          Text('${widget.groupname}'),
                           SizedBox(
                             height: 6,
                           ),
-                          Text('The Fox'),
+                          Text('${widget.recentChat}'),
                         ],
                       ),
                     ),
